@@ -1,4 +1,4 @@
-#' Add a Gift Range Column to a Data Frame TEST
+#' Add a Gift Range Column to a Data Frame
 #'
 #' Categorizes gift amounts in a data frame into predefined ranges and adds
 #' this categorization as a new column. The new column is placed immediately
