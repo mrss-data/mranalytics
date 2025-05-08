@@ -1,0 +1,13 @@
+Package: mranalytics
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("M+R", "Analytics", , "clefevre@mrss.com", role = c("aut", "cre"))
+Description: A collection of utility functions for the M+R Analytics team.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    dplyr (>= 1.0.0),
+    rlang
