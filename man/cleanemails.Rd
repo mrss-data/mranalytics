@@ -32,30 +32,3 @@ It performs several cleaning steps:
 \item Removes duplicate rows from the entire data frame based on all columns after cleaning.
 }
 }
-\examples{
-# Create a sample data frame
-sample_df <- data.frame(
-  ID = 1:6,
-  UserEmail = c(
-    '  "john.doe@example.com"  ',
-    "jane.doe@example.com'",
-    "no_at_symbol.com",
-    "  spaced out@example.com, ",
-    "JOHN.DOE@EXAMPLE.COM", # Duplicate of the first after cleaning
-    "another.user@example.net"
-  ),
-  OtherData = letters[1:6],
-  stringsAsFactors = FALSE
-)
-
-# Clean the 'UserEmail' column
-cleaned_df <- cleanemails(sample_df, "UserEmail")
-print(cleaned_df)
-
-# Example with a factor column
-sample_df_factor <- sample_df
-sample_df_factor$UserEmail <- as.factor(sample_df_factor$UserEmail)
-cleaned_df_factor <- cleanemails(sample_df_factor, "UserEmail")
-print(cleaned_df_factor)
-
-}

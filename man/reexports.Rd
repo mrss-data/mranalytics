@@ -3,11 +3,7 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
-\alias{select}
-\alias{filter}
 \alias{mutate}
-\alias{arrange}
-\alias{summarise}
 \alias{\%>\%}
 \alias{read_excel}
 \title{Objects exported from other packages}
@@ -17,7 +13,7 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{dplyr}{\code{\link[dplyr:reexports]{\%>\%}}, \code{\link[dplyr]{arrange}}, \code{\link[dplyr]{filter}}, \code{\link[dplyr]{mutate}}, \code{\link[dplyr]{select}}, \code{\link[dplyr]{summarise}}}
+  \item{dplyr}{\code{\link[dplyr:reexports]{\%>\%}}, \code{\link[dplyr]{mutate}}}
 
   \item{readxl}{\code{\link[readxl]{read_excel}}}
 }}
