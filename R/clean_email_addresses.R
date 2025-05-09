@@ -44,7 +44,7 @@ cleanemails <- function(data, email_col_name) {
 
   # Work on a copy to avoid modifying the original data frame by reference if it's a data.table
   # For data.frames, assignment creates a copy anyway, but this is safer practice.
-  df_cleaned <- data
+  df_cleaned <- data[[email_col_name]]
 
   # Ensure the column is character (factors need conversion)
   if (is.factor(df_cleaned[[email_col_name]])) {
