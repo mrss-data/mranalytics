@@ -8,7 +8,7 @@ fiscal_year(
   data,
   date_col_name,
   fy_start_month,
-  new_col_name = "FiscalYear",
+  new_col_name = "Fiscal_Year",
   fy_format = "FYYY"
 )
 }
