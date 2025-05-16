@@ -70,7 +70,7 @@
 gift_range <- function(data,
                            amount_col_name,
                            breakpoints,
-                           new_col_name = "GiftRange",
+                           new_col_name = "Gift_Range",
                            prefix_style = "letters") {
 
   # --- Input Validations ---
