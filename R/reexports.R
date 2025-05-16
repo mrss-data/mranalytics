@@ -1,14 +1,24 @@
 # This file is used to re-export functions from other packages
 # so they are available to the user when mranalytics is loaded.
 
+# Re-exporting mutate from dplyr
+#' @importFrom dplyr mutate
+#' @export mutate
+NULL
 
-#' @export
-dplyr::mutate
+# Re-exporting the pipe operator (%>%) from dplyr (which itself gets it from magrittr)
+# OR, more directly from magrittr if you prefer to list magrittr in Imports:
+# #' @importFrom magrittr %>%
+#' @importFrom dplyr %>%
+#' @export %>%
+NULL
 
-#' @export
-dplyr::`%>%` # Note the backticks for special operators
+# Re-exporting read_excel from readxl
+#' @importFrom readxl read_excel
+#' @export read_excel
+NULL
 
-#' @export
-readxl::read_excel
-
-# Add any other functions you want to re-export here.
+# Add any other functions you want to re-export here using the same pattern:
+# #' @importFrom packageName functionName
+# #' @export functionName
+# NULL

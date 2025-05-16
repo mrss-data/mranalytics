@@ -24,7 +24,7 @@
 #'
 #' @export
 
-cleanemails <- function(data, email_col_name) {
+clean_emails <- function(data, email_col_name) {
 
   # --- Input Validation ---
   if (!is.data.frame(data)) {
