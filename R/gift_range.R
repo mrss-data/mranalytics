@@ -140,7 +140,8 @@ gift_range <- function(data,
     # Format lower bound (no cents)
     # scales::dollar_format includes cents by default, need to adjust or use sprintf
     # Using sprintf for more control here for $0 vs $0.00
-    lower_str <- if (lower == 0) "$0" else sprintf("$%.0f", floor(lower))
+    # lower_str <- if (lower == 0) "$0" else sprintf("$%.0f", floor(lower))
+    lower_str <- scales::dollar(lower, accuracy = 1, prefix = "$")
 
 
     if (is.infinite(upper)) {
@@ -150,7 +151,8 @@ gift_range <- function(data,
       # The actual cut point is 'upper', so label should reflect up to 'upper - 0.01'
       upper_display <- upper - 0.01
       # Using scales::dollar for consistent currency formatting
-      upper_str <- scales::dollar(upper_display, accuracy = 0.01)
+      # upper_str <- scales::dollar(upper_display, accuracy = 0.01)
+      upper_str <- scales::dollar(upper_display, accuracy = 0.01, prefix = "$")
       label_text <- paste0(lower_str, " - ", upper_str)
     }
     range_labels[i] <- label_text
@@ -160,15 +162,15 @@ gift_range <- function(data,
   if (prefix_style == "letters") {
     if (num_ranges > 26) {
         warning("More than 26 ranges; letter prefixes will recycle or need adjustment. Using L1, L2,... for now.")
-        prefixes <- paste0("L", 1:num_ranges, ". ")
+        prefixes <- paste0("L", 1:num_ranges, ") ")
     } else if (num_ranges > 0) {
-        prefixes <- paste0(LETTERS[1:num_ranges], ". ")
+        prefixes <- paste0(LETTERS[1:num_ranges], ") ")
     } else {
         prefixes <- ""
     }
     range_labels <- paste0(prefixes, range_labels)
   } else if (prefix_style == "numbers" && num_ranges > 0) {
-    range_labels <- paste0(1:num_ranges, ". ", range_labels)
+    range_labels <- paste0(1:num_ranges, ") ", range_labels)
   }
 
   # --- Apply cut() and Add New Column ---
