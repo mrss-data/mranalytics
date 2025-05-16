@@ -93,7 +93,7 @@ fiscal_year <- function(data,
   }
 
   # --- Date Parsing and FY Calculation ---
-  date_column_sym <- rlang::sym(date_col_name)
+  date_col_name_sym <- rlang::sym(date_col_name)
   new_col_name_sym <- rlang::sym(new_col_name)
 
   data_with_fy <- dplyr::mutate(
