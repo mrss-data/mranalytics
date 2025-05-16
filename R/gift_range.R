@@ -142,7 +142,6 @@ gift_range <- function(data,
     # Using sprintf for more control here for $0 vs $0.00
     # lower_str <- if (lower == 0) "$0" else sprintf("$%.0f", floor(lower))
     lower_str <- scales::dollar(lower, accuracy = 1, prefix = "$")
-    print(paste("Debug: Iteration", i, "- lower:", lower, "- lower_str:", lower_str))
 
     if (is.infinite(upper)) {
       label_text <- paste0(lower_str, " and up")
